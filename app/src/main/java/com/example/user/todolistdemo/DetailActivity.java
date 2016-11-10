@@ -75,7 +75,7 @@ public void save(View v)
                 null, null, null, null, null);
 
         cursor.moveToFirst();
-
+        taskModelList6.clear();
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 //create a new Games object and retrieve the data from the cursor to be stored in this Games object

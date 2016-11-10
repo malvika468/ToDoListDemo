@@ -32,7 +32,7 @@ public class Description extends AppCompatActivity {
         mViewPager.setAdapter(new SamplePagerAdapter(
                 getSupportFragmentManager(),list ));
         // mViewPager.setOnPageChangeListener(new MyPageChangeListener());
-       // mViewPager.setCurrentItem(pos);
+        mViewPager.setCurrentItem(pos);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         pos = extras.getInt("pos", -1);
@@ -58,54 +58,16 @@ public class Description extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
 
-             if(position==1)
-            {
+             mViewPager.setCurrentItem(pos);
                 SampleFragment  f = new SampleFragment();
                 // Supply index input as an argument.
                 Bundle args = new Bundle();
-                args.putString("index", list.get(pos+1).getDesc());
+                args.putString("index", list.get(position).getDesc());
                 f.setArguments(args);
                 return  f;
-            }
 
-            else if(position==2)
-            {
-                SampleFragment  f = new SampleFragment();
-                // Supply index input as an argument.
-                Bundle args = new Bundle();
-                args.putString("index", list.get(pos+2).getDesc());
-                f.setArguments(args);
-                return  f;
-            }
 
-            else if(position==3)
-            {
-                SampleFragment  f = new SampleFragment();
-                // Supply index input as an argument.
-                Bundle args = new Bundle();
-                args.putString("index", list.get(pos+3).getDesc());
-                f.setArguments(args);
-                return  f;
-            }
 
-            else if(position==4)
-            {
-                SampleFragment  f = new SampleFragment();
-                // Supply index input as an argument.
-                Bundle args = new Bundle();
-                args.putString("index", list.get(pos+4).getDesc());
-                f.setArguments(args);
-                return  f;
-            }
-            else
-            {
-                SampleFragment  f = new SampleFragment();
-                // Supply index input as an argument.
-                Bundle args = new Bundle();
-                args.putString("index", list.get(pos+5).getDesc());
-                f.setArguments(args);
-                return  f;
-            }
 
 
         }
